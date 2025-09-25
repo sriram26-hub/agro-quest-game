@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { FarmField } from './FarmField';
 import { ToolPanel } from './ToolPanel';
+import { Farm3D } from './Farm3D';
+import { Tools3D } from './Tools3D';
 
 interface FarmData {
   soilType: string;
@@ -268,17 +270,50 @@ export const FarmGameplay: React.FC<FarmGameplayProps> = ({ farmData, onBack }) 
 
           {/* Game Field */}
           <div className="space-y-6">
-            <FarmField 
-              farmData={farmData}
-              fieldState={fieldState}
-              currentStep={currentStep}
-            />
+            {/* 3D Farm View */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-center">3D Farm Simulator</h3>
+              <Farm3D 
+                farmData={farmData}
+                fieldState={fieldState}
+                currentStep={currentStep}
+              />
+            </div>
             
-            <ToolPanel 
-              currentTool={gameSteps[currentStep]?.tool}
-              onToolUse={handleToolUse}
-              fieldState={fieldState}
-            />
+            {/* 3D Tools Panel */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Farming Tools</h4>
+              <div className="grid grid-cols-3 gap-4 justify-items-center">
+                {gameSteps.map((step, index) => (
+                  <Tools3D
+                    key={step.tool}
+                    toolType={step.tool}
+                    isActive={step.tool === gameSteps[currentStep]?.tool}
+                    onUse={() => handleToolUse(step.tool)}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            {/* Original 2D fallback (hidden by default, can be toggled) */}
+            <details className="mt-6">
+              <summary className="cursor-pointer text-sm text-muted-foreground">
+                View 2D Version
+              </summary>
+              <div className="mt-4 space-y-4">
+                <FarmField 
+                  farmData={farmData}
+                  fieldState={fieldState}
+                  currentStep={currentStep}
+                />
+                
+                <ToolPanel 
+                  currentTool={gameSteps[currentStep]?.tool}
+                  onToolUse={handleToolUse}
+                  fieldState={fieldState}
+                />
+              </div>
+            </details>
           </div>
         </div>
       </div>
