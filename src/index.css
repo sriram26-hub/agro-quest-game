@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Agricultural Education Platform Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Agricultural Theme Colors */
+    --background: 45 15% 96%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 20% 98%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 20% 98%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Earth & Soil Tones */
+    --primary: 25 45% 35%;  /* Rich brown */
+    --primary-foreground: 45 15% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 85 35% 65%;  /* Natural green */
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 12% 88%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 60 85% 55%;  /* Vibrant crop yellow */
+    --accent-foreground: 30 10% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Agricultural Specific Colors */
+    --soil: 20 25% 25%;  /* Dark soil */
+    --soil-foreground: 45 15% 96%;
+    
+    --water: 200 85% 65%;  /* Clear water blue */
+    --water-foreground: 30 10% 15%;
+    
+    --crop: 90 45% 45%;  /* Healthy crop green */
+    --crop-foreground: 45 15% 96%;
+    
+    --warning: 40 95% 55%;  /* Alert orange */
+    --warning-foreground: 30 10% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 15% 96%;
 
-    --radius: 0.5rem;
+    --border: 45 20% 85%;
+    --input: 45 20% 90%;
+    --ring: 25 45% 35%;
+
+    --radius: 0.75rem;
+
+    /* Agricultural Gradients */
+    --gradient-soil: linear-gradient(135deg, hsl(20 25% 25%), hsl(25 30% 30%));
+    --gradient-sky: linear-gradient(135deg, hsl(200 85% 75%), hsl(220 70% 85%));
+    --gradient-field: linear-gradient(135deg, hsl(85 35% 65%), hsl(90 45% 45%));
+    --gradient-harvest: linear-gradient(135deg, hsl(60 85% 55%), hsl(45 75% 50%));
+
+    /* Farm Shadows */
+    --shadow-earth: 0 4px 20px hsl(20 25% 25% / 0.15);
+    --shadow-crop: 0 2px 15px hsl(90 45% 45% / 0.2);
+    --shadow-tool: 0 6px 25px hsl(25 45% 35% / 0.25);
+
+    /* Animation Variables */
+    --transition-farm: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-crop: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 

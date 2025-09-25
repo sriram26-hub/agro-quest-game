@@ -15,11 +15,17 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Agricultural variants
+        farm: "bg-gradient-field text-crop-foreground shadow-crop hover:bg-crop/90 border border-crop/20",
+        soil: "bg-gradient-soil text-soil-foreground shadow-earth hover:opacity-90",
+        harvest: "bg-gradient-harvest text-warning-foreground shadow-tool hover:bg-warning/90",
+        water: "bg-water text-water-foreground shadow-sm hover:bg-water/90 border border-water/30",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-12 text-lg",
         icon: "h-10 w-10",
       },
     },
